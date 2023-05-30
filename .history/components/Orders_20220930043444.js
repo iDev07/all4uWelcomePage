@@ -265,7 +265,7 @@ function Orders() {
           <Fade right>
             <div className="how_it_work">
               <div className="entrence">
-                <h1>Как это работает ?</h1>
+                <h1>How it works ?</h1>
               </div>
               <div className="steps_wrapper">
                 <div className="steps">
@@ -273,7 +273,7 @@ function Orders() {
                     <h2>1</h2>
                   </div>
                   <div className="about_step">
-                    <h3>Покупатель размещает заказ на нужную ему продукцию</h3>
+                    <h3>Bla bla bla blaa blabla nasmnsma</h3>
                     <p>
                       Deserunt aute elit culpa eiusmod adipisicing duis do qui
                       sint labore cupidatat cupidatat commodo.ud.
@@ -285,7 +285,7 @@ function Orders() {
                     <h2>2</h2>
                   </div>
                   <div className="about_step">
-                    <h3>Поставщики предлагают цени</h3>
+                    <h3>Bla bla bla blaa blabla nasmnsma</h3>
                     <p>
                       Deserunt aute elit culpa eiusmod adipisicing duis do qui
                       sint labore cupidatat cupidatat commodo.ud.
@@ -297,7 +297,7 @@ function Orders() {
                     <h2>3</h2>
                   </div>
                   <div className="about_step">
-                    <h3>Покупатель выбираеть поставщика</h3>
+                    <h3>Bla bla bla blaa blabla nasmnsma</h3>
                     <p>
                       Deserunt aute elit culpa eiusmod adipisicing duis do qui
                       sint labore cupidatat cupidatat commodo.ud.

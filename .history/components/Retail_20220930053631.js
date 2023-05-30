@@ -157,10 +157,8 @@ function Retail() {
             </Fade>
           </div>
           <a href="" className="click_retail product_wrap">
-            <div className="for_back_wholesale">
-              <div className="content__this">
-                <h2>Посмотреть оптовую площадку</h2>
-              </div>
+            <div>
+              <h2> See Retail marketplace</h2>
             </div>
           </a>
         </div>
