@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import axios from "axios";
 function Wholesale() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState({ params: {}, products: [] });
 
   useEffect(() => {
     axios

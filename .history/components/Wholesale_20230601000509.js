@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import axios from "axios";
 function Wholesale() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState({ params: {}, products: [] });
 
   useEffect(() => {
     axios
@@ -93,7 +93,7 @@ function Wholesale() {
               <div className="product_wrap" key={index}>
                 <a href="">
                   <div className="prod_image">
-                    <img src={productArray.main_pair.detailed.image_path} />
+                    <img src={productArray.detailed.image_path} />
                   </div>
                   <div className="prod_status">
                     <div className="top_wrap">
