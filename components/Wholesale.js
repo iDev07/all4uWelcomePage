@@ -7,7 +7,7 @@ function Wholesale() {
   useEffect(() => {
     axios
       .get(
-        "https://all4u.market/api/stores/609/products?limit=4&storefront=14&get_frontend_urls=true&sort_order=desc",
+        "https://all4u.market/api/stores/609/products?limit=4&storefront=14&get_frontend_urls=true&sort_order=desc&status=a",
         {
           headers: {
             "Content-Type": "application/json",
