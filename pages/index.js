@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Advanteges from "../components/Advanteges";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Header from "../components/layouts/Header";
 import HomeMain from "../components/HomeMain";
 import Join from "../components/Join";
 import MobileFooter from "../components/MobileFooter";
@@ -30,7 +30,7 @@ export default function Home() {
       <Join />
       <Services />
       <News />
-      <Footer />
+
       {/* <MobileFooter /> */}
     </>
   );

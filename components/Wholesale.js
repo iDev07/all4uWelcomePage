@@ -3,11 +3,11 @@ import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import axios from "axios";
 function Wholesale() {
   const [products, setProducts] = useState([]);
-
+  const usd = 12100;
   useEffect(() => {
     axios
       .get(
-        "https://all4u.market/api/stores/609/products?limit=4&storefront=14&get_frontend_urls=true&sort_order=desc&status=a",
+        "https://turbomarket.uz/api/stores/609/products?limit=4&storefront=14&get_frontend_urls=true&sort_order=desc&status=a",
         {
           headers: {
             "Content-Type": "application/json",
@@ -89,40 +89,40 @@ function Wholesale() {
         </div>
         <div className="retail_products">
           <div className="retail_prod_wrapper">
-            {products.map((productArray, index) => (
+            {products.map((product, index) => (
               <div className="product_wrap" key={index}>
-                <a href="">
-                  <div className="prod_image">
-                    <img src={productArray.main_pair.detailed.image_path} />
+                {/* <a href=""> */}
+                <div className="prod_image">
+                  <img src={product.main_pair.detailed.image_path} />
+                </div>
+                <div className="prod_status">
+                  <div className="top_wrap">
+                    <p>
+                      <CheckCircleOutlinedIcon /> В наличии
+                    </p>
+                    <p>Узбекистан</p>
                   </div>
-                  <div className="prod_status">
-                    <div className="top_wrap">
-                      <p>
-                        <CheckCircleOutlinedIcon /> В наличии
-                      </p>
-                      <p>Узбекистан</p>
-                    </div>
+                </div>
+                <div className="prod_price">
+                  <div>
+                    <h2>
+                      {product.price * usd} <span>UZS</span>
+                    </h2>
+                    <h4>
+                      {" "}
+                      <s>13 111 111</s>
+                      <span>UZS</span>
+                    </h4>
                   </div>
-                  <div className="prod_price">
-                    <div>
-                      <h2>
-                        13 111 111 <span>UZS</span>
-                      </h2>
-                      <h4>
-                        {" "}
-                        <s>13 111 111</s>
-                        <span>UZS</span>
-                      </h4>
-                    </div>
-                    <div className="discount">2%</div>
+                  <div className="discount">2%</div>
+                </div>
+                <div className="prod_about">
+                  <div>
+                    <h4>{product.product}</h4>
+                    <p>Bsxzxbzsxmzbsnxm bzmxzsnbxm zbsAXAXAXXA cawawcx </p>
                   </div>
-                  <div className="prod_about">
-                    <div>
-                      <h4>Samsung S22 Ultra 256GB </h4>
-                      <p>Bsxzxbzsxmzbsnxm bzmxzsnbxm zbsAXAXAXXA cawawcx </p>
-                    </div>
-                  </div>
-                </a>
+                </div>
+                {/* </a> */}
               </div>
             ))}
           </div>
