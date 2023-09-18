@@ -17,7 +17,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>ALL4U - marketplace</title>
+        <title>Turbo Market</title>
+        <meta
+          name="description"
+          content="Wholesale and retail trading platform for searching, purchasing and delivering goods and products throughout the CIS countries - Uzbekistan, Russia, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Georgia, Armenia, Azerbaijan"
+        />
+        <link rel="icon" href="miniT.png" />
+        <meta name="author" content="World Miral" />
       </Head>
       <MobileHeader />
       <Header />

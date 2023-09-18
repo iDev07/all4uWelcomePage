@@ -10,7 +10,7 @@ export const ProductCard = ({ product }) => {
       <div className="prod_status">
         <div className="top_wrap">
           <p>
-            <CheckCircleOutlinedIcon /> В наличии
+            <CheckCircleOutlinedIcon /> В наличи
           </p>
           <p>Узбекистан</p>
         </div>

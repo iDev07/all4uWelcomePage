@@ -66,7 +66,7 @@ function Header() {
             </div>
             <div className="center_box">
               <Link href="/">
-                <img src="../images/LOGO.svg" />
+                <img src="../images/lightlogo.png" />
               </Link>
             </div>
             <div className="right_box">
