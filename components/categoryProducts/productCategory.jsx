@@ -41,7 +41,7 @@ export const ProductCategory = ({
           <div className="retail_prod_wrapper">
             <Swiper
               spaceBetween={10}
-              slidesPerView={6}
+              slidesPerView={5}
               slidesPerGroup={1}
               loop={true}
               autoplay={{

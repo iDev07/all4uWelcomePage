@@ -96,7 +96,7 @@ export default function Home() {
 
       {/* <SmallServices /> */}
       {/* <Orders /> */}
-      <Wholesale />
+      {/* <Wholesale /> */}
       <Retail />
       <Advanteges />
       <Join />
