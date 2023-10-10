@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+};
 
-module.exports = nextConfig
+// next.config.js
+
+module.exports = {
+  images: {
+    domains: ["turbomarket.uz"], // Add your domain here
+  },
+};

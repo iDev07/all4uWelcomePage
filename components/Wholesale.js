@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
-import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { ProductCard } from "./productCard/ProductCard";
 function Wholesale() {
   const [products, setProducts] = useState([]);
   const usd = 12100;
   useEffect(() => {
     axios
       .get(
-        "https://turbomarket.uz/api/stores/609/products?limit=4&storefront=14&get_frontend_urls=true&sort_order=desc&status=a",
+        `${process.env.NEXT_PUBLIC_BASE_URL}/stores/609/products?limit=20&storefront=14&get_frontend_urls=true&sort_order=desc&status=a&features=&lang_id=ru&options=`,
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer aGFzYW5iZWsuZWxtdXJvZG92QGdtYWlsLmNvbTpOcDMySzFBbm5uMzIxOFM4UzM4MFQwUmM3VDdtVDE2Nw==",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_BEARER_TOKEN}`,
           },
         }
       )
@@ -89,48 +90,45 @@ function Wholesale() {
         </div>
         <div className="retail_products">
           <div className="retail_prod_wrapper">
-            {products.map((product, index) => (
-              <div className="product_wrap" key={index}>
-                {/* <a href=""> */}
-                <div className="prod_image">
-                  <img src={product.main_pair.detailed.image_path} />
-                </div>
-                <div className="prod_status">
-                  <div className="top_wrap">
-                    <p>
-                      <CheckCircleOutlinedIcon /> В наличии
-                    </p>
-                    <p>Узбекистан</p>
-                  </div>
-                </div>
-                <div className="prod_price">
-                  <div>
-                    <h2>
-                      {product.price * usd} <span>UZS</span>
-                    </h2>
-                    <h4>
-                      {" "}
-                      <s>13 111 111</s>
-                      <span>UZS</span>
-                    </h4>
-                  </div>
-                  <div className="discount">2%</div>
-                </div>
-                <div className="prod_about">
-                  <div>
-                    <h4>{product.product}</h4>
-                    <p>Bsxzxbzsxmzbsnxm bzmxzsnbxm zbsAXAXAXXA cawawcx </p>
-                  </div>
-                </div>
-                {/* </a> */}
-              </div>
-            ))}
+            <Swiper
+              spaceBetween={50}
+              slidesPerView={4}
+              slidesPerGroup={1}
+              loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              loopFillGroupWithBlank={true}
+              breakpoints={{
+                "@0.00": {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                "@0.75": {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                "@1.00": {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+                "@1.50": {
+                  slidesPerView: 3,
+                  spaceBetween: 50,
+                },
+              }}
+              navigation={true}
+              modules={[Autoplay, Navigation]}
+              className="mySwiper"
+            >
+              {products.map((product, index) => (
+                <SwiperSlide>
+                  <ProductCard product={product} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-          <a href="" className="click_retail product_wrap">
-            <div>
-              <h2> See Wholesale marketplace</h2>
-            </div>
-          </a>
         </div>
       </div>
     </div>

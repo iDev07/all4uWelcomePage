@@ -14,82 +14,15 @@
   .nav_wrapper {
     align-items: center;
     display: grid;
-    grid-template-columns: 35% 30% 35%;
+    grid-template-columns: 70% 30%;
     width: 100%;
     max-width: 100%;
     @media all and (max-width: 992px) {
-      grid-template-columns: 37% 25% 37%;
+      display: flex;
     }
     .left_box {
-      ul {
-        display: flex;
-        padding-left: 0;
-        width: 100%;
-        align-items: center;
-        li {
-          @media all and (max-width: 992px) {
-            margin-left: 0;
-            font-size: 14px;
-          }
-          color: #fff;
-          list-style: none;
-          margin-right: 10px;
-          display: flex;
-          align-items: center;
-          position: relative;
-        }
-      }
-      .retail_parent {
-        &:hover .retail_links {
-          // top: 20px !important;
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-      .retail_links {
-        top: 10px;
-        transition: 0.4s ease-out;
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        display: block;
-        padding: 10px;
-        background: #202123;
-        border: 1px solid #4b4b4b;
-        border-radius: 5px;
-        width: 150%;
-        margin-top: 20px;
+    }
 
-        li {
-          transition: 0.3s ease;
-          padding: 8px 0;
-          &:hover {
-            padding-left: 5px;
-            a {
-              color: #fff;
-              font-weight: 600;
-              svg {
-                color: #ff9600;
-              }
-            }
-          }
-          a {
-            display: flex;
-            align-items: center;
-            svg {
-              margin-right: 10px;
-            }
-          }
-        }
-      }
-    }
-    .center_box {
-      display: flex;
-      justify-content: center;
-      img {
-        width: 200px;
-      }
-    }
     .right_box {
       width: 100%;
       ul {
@@ -140,6 +73,13 @@
         }
       }
     }
+  }
+  .categories {
+    display: none;
+    background-color: #fff;
+    height: 200px;
+    overflow-y: auto;
+    position: fixed;
   }
 }
 .HomeMain {
@@ -732,8 +672,8 @@
 }
 .Wholesale {
   .retail_products {
-    display: grid;
-    grid-template-columns: 84% 16%;
+    // display: grid;
+    // grid-template-columns: 84% 16%;
     margin: 50px 0;
     @media all and (max-width: 768px) {
       display: block;
@@ -753,7 +693,7 @@
           width: 100%;
           margin: 30px 0;
         }
-        width: 22%;
+        width: 100%;
         margin-right: 30px;
         padding: 15px;
         background: #ffffff;
@@ -766,6 +706,7 @@
         .prod_image {
           img {
             width: 100%;
+            object-fit: contain;
           }
         }
         .top_wrap {

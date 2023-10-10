@@ -1,11 +1,23 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 const usd = 12157;
 export const ProductCard = ({ product }) => {
+  const formattedPrice = (product.price * usd).toLocaleString("uz-UZ", {
+    style: "currency",
+    currency: "UZS",
+  });
+
   return (
     <div className="product_wrap" key={product.id}>
-      {/* <a href=""> */}
       <div className="prod_image">
-        <img src={product.main_pair.detailed.image_path} />
+        <Image
+          src={product.main_pair.detailed.image_path}
+          width={400}
+          height={350}
+          alt={product.main_pair.detailed.image_path}
+        />
       </div>
       <div className="prod_status">
         <div className="top_wrap">
@@ -18,19 +30,17 @@ export const ProductCard = ({ product }) => {
       <div className="prod_price">
         <div>
           <h2>
-            {product.price * usd} <span>UZS</span>
+            <p> {formattedPrice}</p> <span>UZS</span>
           </h2>
-          <h4>
-            {" "}
-            <span>1</span>
-            <span>UZS</span>
-          </h4>
+          <h4> </h4>
         </div>
         <div className="discount">2%</div>
       </div>
       <div className="prod_about">
         <div>
-          <h4>{product.product}</h4>
+          <h3>
+            <Link href={product.seo_name}>{product.product}</Link>
+          </h3>
           <p></p>
         </div>
       </div>
