@@ -1,15 +1,34 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import PhoneEnabledOutlinedIcon from "@mui/icons-material/PhoneEnabledOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Button, Select } from "antd";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import axios from "axios";
+import { Dropdown, Space } from "antd";
 
 const { Option } = Select;
 
 function Header() {
   const [categories, setCategories] = useState([]);
+  const handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
+  const items = [
+    {
+      key: "1",
+      label: (
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://turbomarket.uz"
+        >
+          Retail marketplace
+        </a>
+      ),
+    },
+  ];
   useEffect(() => {
     axios
       .get("https://turbomarket.uz/api/categories?lang_code=ru&status=a", {
@@ -24,47 +43,23 @@ function Header() {
         console.log(response.data.categories);
       });
   }, []);
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
-  };
+
   return (
     <div>
       <div className="header_wrapper">
         <div className="containerdev ">
           <div className="nav_wrapper">
-            <div className="left_box">
-              <div className="logo_box">
-                <Link href="/">
-                  <img width={200} src="../images/lightlogo.png" />
+            <div className="logo">
+              <div className="logo_wrapper">
+                <Link href={"/"}>
+                  <Image
+                    src={"/images/lightlogo.png"}
+                    width={150}
+                    height={80}
+                    alt="Turbo Market logo"
+                  />
                 </Link>
               </div>
-              <div className="main_navigations">
-                <div className="catalogBtn">
-                  <Button>Catalog</Button>
-                </div>
-                <div className="switch_showcase"></div>
-              </div>
-            </div>
-            <div className="right_box">
-              <ul className="qucik_link">
-                <li className="phone_icon">
-                  <PhoneEnabledOutlinedIcon />
-                  <a href="tel: +998 71 230 38 83">+998 71 230 38 83 </a>
-                </li>
-                <Select
-                  defaultValue="RU"
-                  style={{
-                    width: 70,
-                  }}
-                  onChange={handleChange}
-                >
-                  <Option value="ru">RU </Option>
-                </Select>
-                <li className="account_icon">
-                  <AccountCircleOutlinedIcon />
-                  <a href="https://all4u.market/profile-ru">Личный кабинет</a>
-                </li>
-              </ul>
             </div>
           </div>
           <div className="categories">

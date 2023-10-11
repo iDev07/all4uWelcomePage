@@ -40,7 +40,7 @@ export const ProductCategory = ({
         <div className="retail_products">
           <div className="retail_prod_wrapper">
             <Swiper
-              spaceBetween={10}
+              spaceBetween={5}
               slidesPerView={5}
               slidesPerGroup={1}
               loop={true}
@@ -59,11 +59,11 @@ export const ProductCategory = ({
                   spaceBetween: 20,
                 },
                 "@1.00": {
-                  slidesPerView: 3,
+                  slidesPerView: 5,
                   spaceBetween: 40,
                 },
                 "@1.50": {
-                  slidesPerView: 3,
+                  slidesPerView: 5,
                   spaceBetween: 50,
                 },
               }}
