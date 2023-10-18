@@ -39,7 +39,7 @@ export const ProductCard = ({ product }) => {
       <div className="prod_about">
         <div>
           <h3>
-            <Link href={product.seo_name}>{product.product}</Link>
+            <Link href={product.url}>{product.product}</Link>
           </h3>
           <p></p>
         </div>
